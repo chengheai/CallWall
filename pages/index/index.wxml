@@ -1,13 +1,31 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- pages/danmv/danmv.wxml -->
+<view class="container" bindtap="togglePanel">
+  <text class='scroll-text' animation="{{scroll}}" style='color:{{colorArr[colorIndex].value}};font-size:{{sizeArr[sizeIndex].value}}vw;'>
+    {{displayText}}
+  </text>
+</view>
+<view class="panel-container" style='transform: translate3d(0,{{panelAmt}}%,0);'>
+  <input class="bottom-text" placeholder="请输入你的弹幕内容" catchconfirm="textInput" value="{{textInput}}" catchfocus="handleFocus"></input>
+  <view class='panel'>
+    <view class="panel-title">速度</view>
+    <scroll-view class="panel-scroll" scroll-x="true" id="speed">
+      <view wx:for="{{speedArr}}" wx:key="" class="{{item.active?'active':''}}" data-index="{{index}}" catchtap="changeSpeed">
+        {{item.name}}
+      </view>
+    </scroll-view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='panel'>
+    <view class="panel-title">字号</view>
+    <scroll-view class="panel-scroll" scroll-x="true" id="size">
+      <view wx:for="{{sizeArr}}" wx:key="" class="{{item.active?'active':''}}" data-index="{{index}}" catchtap="changeSize">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class='panel'>
+    <view class="panel-title">颜色</view>
+    <scroll-view class="panel-scroll" scroll-x="true" id="color">
+      <view wx:for="{{colorArr}}" wx:key="" class="{{item.active?'active':''}}" data-index="{{index}}" catchtap="changeColor" style="background-color:{{item.value}}"></view>
+    </scroll-view>
   </view>
 </view>

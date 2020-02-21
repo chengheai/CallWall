@@ -1,21 +1,114 @@
-/**index.wxss**/
-.userinfo {
+page {
+  color: white;
+  font: 30rpx;
+  background-color: black;
+}
+
+.container {
+  width: 100vh;
+  height: 100vw;
+  background-color: #000;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  line-height: 1;
+}
+
+.scroll-text {
+  padding-left: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  margin-top: -1.5em;
+}
+
+.bottom-container {
+  position: fixed;
+  bottom: 0rpx;
+  height: auto;
+  padding: 15rpx 0;
+  width: 100%;
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.bottom-text {
+  height: 50rpx;
+  flex-basis: 60%;
+  border-bottom: 4rpx solid rgb(230, 227, 227);
+  padding: 20rpx 20rpx;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.panel-container {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20rpx;
+  box-sizing: border-box;
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.5s;
+}
+
+.panel {
+  text-align: center;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.panel-scroll {
+  margin-top: 10rpx;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  white-space: nowrap;
+  height: 60rpx;
+  transition: all 0.5s;
+  width: auto;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.panel-scroll view {
+  display: inline-block;
+  font-size: 18rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: rgb(68, 67, 67);
+  overflow: hidden;
+  margin: 0 15rpx;
+  box-sizing: border-box;
+  border: 2rpx solid rgb(68, 67, 67);
 }
 
-.usermotto {
-  margin-top: 200px;
+.panel-title {
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+
+.active {
+  border: 2rpx solid yellow !important;
+}
+
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+
+.hint {
+  width: 100%;
+  color: red;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.5em;
+  margin: 30rpx 0;
 }
