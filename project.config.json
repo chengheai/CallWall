@@ -1,16 +1,45 @@
 {
-	"miniprogramRoot": "dist/",
-	"projectname": "CallWall",
-	"description": "小程序打call",
-	"appid": "wxe7517d835b4a9b9f",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
-		"es6": false,
-		"postcss": false,
-		"minified": false
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false
 	},
 	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wxe7517d835b4a9b9f",
+	"projectname": "CallWall",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
 }
